@@ -1,0 +1,16 @@
+# Add sanitized Ceradrive custom app here
+
+Place the sanitized Ceradrive custom app folder here before uploading to the temporary public GitHub repo.
+
+Example:
+
+```text
+app/<custom_app_name>/hooks.py
+app/<custom_app_name>/<custom_app_name>/doctype/...
+app/<custom_app_name>/<custom_app_name>/report/...
+app/<custom_app_name>/<custom_app_name>/api/...
+app/<custom_app_name>/<custom_app_name>/patches/...
+app/<custom_app_name>/<custom_app_name>/fixtures/...
+```
+
+Do not place secrets, site configs, backups, database dumps, logs, or customer data here.
