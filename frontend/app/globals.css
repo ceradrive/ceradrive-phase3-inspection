@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #F9FAFB;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button { cursor: pointer; font-family: inherit; }
+}
+
+@layer components {
+  /* ERP shell — fixed full-height layout */
+  .erp-shell {
+    @apply flex h-screen overflow-hidden;
+    background: #F9FAFB;
+  }
+
+  /* Sidebar */
+  .erp-sidebar {
+    width: 236px;
+    min-width: 236px;
+    @apply bg-white border-r border-erp-border flex flex-col overflow-hidden;
+    transition: width 0.2s ease, min-width 0.2s ease;
+  }
+  .erp-sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+  }
+
+  /* Topbar */
+  .erp-topbar {
+    height: 56px;
+    @apply bg-white border-b border-erp-border flex items-center gap-3 px-5 flex-shrink-0;
+  }
+
+  /* Content area */
+  .erp-content {
+    @apply flex-1 overflow-y-auto p-6;
+    background: #F9FAFB;
+  }
+
+  /* KPI cards */
+  .kpi-card {
+    @apply bg-white border border-erp-border rounded-card p-5 flex items-center gap-4;
+  }
+  .kpi-icon {
+    @apply rounded-xl flex items-center justify-center flex-shrink-0;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  /* Table */
+  .erp-table {
+    @apply bg-white border border-erp-border rounded-card overflow-hidden;
+  }
+  .erp-table-head {
+    @apply bg-erp-bg border-b border-erp-border;
+  }
+  .erp-table-row {
+    @apply border-b border-erp-borderLight last:border-b-0;
+    transition: background 0.1s;
+  }
+  .erp-table-row:hover {
+    background: #F9FAFB;
+  }
+
+  /* Status badges — outlined style matching reference */
+  .badge-open     { color: #059669; border-color: #059669; }
+  .badge-pgrn     { color: #D97706; border-color: #D97706; }
+  .badge-pappr    { color: #D97706; border-color: #D97706; }
+  .badge-closed   { color: #6B7280; border-color: #D1D5DB; }
+  .badge-cancelled{ color: #DC2626; border-color: #DC2626; }
+
+  /* Toast */
+  .toast-item {
+    @apply flex items-start gap-3 rounded-lg px-4 py-3;
+    background: #1F2937;
+    color: #fff;
+    min-width: 220px;
+    animation: toast-in 0.2s ease;
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}

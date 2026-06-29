@@ -1,0 +1,15 @@
+{
+  "name": "@ceradrive/shared",
+  "version": "1.0.0",
+  "description": "Shared constants for Ceradrive ERP — backend and frontend",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./roles": "./roles.js",
+    "./statuses": "./statuses.js",
+    "./movementTypes": "./movementTypes.js",
+    "./validation/amounts": "./validation/amounts.js"
+  },
+  "private": true
+}
